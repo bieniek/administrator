@@ -1,7 +1,7 @@
 package com.mbsoft.activemq.administrator.infrastructure.activemq;
 
 import com.mbsoft.activemq.administrator.core.Administrator;
-import com.mbsoft.activemq.administrator.core.Queue;
+import com.mbsoft.activemq.administrator.core.WorkItemsQueue;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.advisory.DestinationSource;
@@ -18,8 +18,8 @@ public class ActiveMQAdministrator implements Administrator {
     }
 
     @Override
-    public List<Queue> list() {
-        List<Queue> result = new ArrayList<>();
+    public List<WorkItemsQueue> list() {
+        List<WorkItemsQueue> result = new ArrayList<>();
 
 
         ActiveMQConnection connection = null;
@@ -43,7 +43,7 @@ public class ActiveMQAdministrator implements Administrator {
                         timestamp = queueMessage.getJMSTimestamp();
                     messagesInQueueSize++;
                 }
-                result.add(new Queue(queue.getQueueName(), timestamp, messagesInQueueSize, 1000L));
+                result.add(new WorkItemsQueue(queue.getQueueName(), timestamp, messagesInQueueSize, 1000L));
             }
 
             connection.stop();

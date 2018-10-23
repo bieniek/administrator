@@ -1,12 +1,12 @@
 package com.mbsoft.activemq.administrator.core;
 
-public class Queue {
+public class WorkItemsQueue {
     private String name;
     private Long timestamp;
     private Long numberOfMessages;
     private Long expectedNumberOfMessages;
 
-    public Queue(String name, long timestamp, long numberOfMessages, long expectedNumberOfMessages) {
+    public WorkItemsQueue(String name, long timestamp, long numberOfMessages, long expectedNumberOfMessages) {
         this.name = name;
         this.timestamp = timestamp;
         this.numberOfMessages = numberOfMessages;

@@ -1,7 +1,7 @@
 package com.mbsoft.activemq.administrator.infrastructure.spring.rest;
 
 import com.mbsoft.activemq.administrator.core.Administrator;
-import com.mbsoft.activemq.administrator.core.Queue;
+import com.mbsoft.activemq.administrator.core.WorkItemsQueue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +18,7 @@ public class AdministratorController {
     }
 
     @GetMapping("/list")
-    List<Queue> list() {
+    List<WorkItemsQueue> list() {
         return administrator.list();
     }
 
